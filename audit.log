@@ -1,0 +1,134 @@
+2025-09-01 01:00:01 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+2025-09-01 01:00:01 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 01:00:01 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 01:00:01 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 01:00:06 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:00:06 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:00:31 INFO [QUERY] User asked: Explain invoice INV-124
+2025-09-01 01:00:31 INFO [DECISION] Planner decided action: unknown
+2025-09-01 01:00:31 INFO [DATA] Retrieved invoice INV-124 and PO PO-988
+2025-09-01 01:00:31 INFO [VERIFICATION] Match score: 100.0, Confidence: High
+2025-09-01 01:00:33 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:00:33 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:04:12 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+2025-09-01 01:04:12 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 01:04:12 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 01:04:12 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 01:04:17 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:04:17 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:04:22 INFO [QUERY] User asked: approve
+2025-09-01 01:04:22 INFO [ACTION] Invoice INV-123 approved by user command
+2025-09-01 01:04:35 INFO [QUERY] User asked: Explain invoice INV-124
+2025-09-01 01:04:35 INFO [DECISION] Planner decided action: unknown
+2025-09-01 01:04:35 INFO [DATA] Retrieved invoice INV-124 and PO PO-988
+2025-09-01 01:04:35 INFO [VERIFICATION] Match score: 100.0, Confidence: High
+2025-09-01 01:04:37 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:04:37 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:11:10 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-01 01:11:10 INFO [33mPress CTRL+C to quit[0m
+2025-09-01 01:11:10 INFO  * Restarting with stat
+2025-09-01 01:11:11 WARNING  * Debugger is active!
+2025-09-01 01:11:11 INFO  * Debugger PIN: 821-901-270
+2025-09-01 01:11:45 INFO 127.0.0.1 - - [01/Sep/2025 01:11:45] "GET / HTTP/1.1" 200 -
+2025-09-01 01:11:45 INFO 127.0.0.1 - - [01/Sep/2025 01:11:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-01 01:12:22 INFO [QUERY] User asked: can you explain why ?
+2025-09-01 01:12:22 INFO [DECISION] Planner decided action: unknown
+2025-09-01 01:12:22 INFO 127.0.0.1 - - [01/Sep/2025 01:12:22] "POST / HTTP/1.1" 200 -
+2025-09-01 01:12:34 INFO [QUERY] User asked: inv112
+2025-09-01 01:12:34 INFO [DECISION] Planner decided action: unknown
+2025-09-01 01:12:34 INFO 127.0.0.1 - - [01/Sep/2025 01:12:34] "POST / HTTP/1.1" 200 -
+2025-09-01 01:12:35 INFO [QUERY] User asked: inv112
+2025-09-01 01:12:35 INFO [DECISION] Planner decided action: unknown
+2025-09-01 01:12:35 INFO 127.0.0.1 - - [01/Sep/2025 01:12:35] "POST / HTTP/1.1" 200 -
+2025-09-01 01:13:55 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+2025-09-01 01:13:55 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 01:13:55 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 01:13:55 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 01:13:59 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:14:00 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:14:00 INFO 127.0.0.1 - - [01/Sep/2025 01:14:00] "POST / HTTP/1.1" 200 -
+2025-09-01 01:14:09 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+approve it
+2025-09-01 01:14:09 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 01:14:09 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 01:14:09 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 01:14:12 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:14:12 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:14:12 INFO 127.0.0.1 - - [01/Sep/2025 01:14:12] "POST / HTTP/1.1" 200 -
+2025-09-01 01:14:32 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+approve it
+ok
+2025-09-01 01:14:32 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 01:14:32 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 01:14:32 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 01:14:34 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:14:34 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:14:34 INFO 127.0.0.1 - - [01/Sep/2025 01:14:34] "POST / HTTP/1.1" 200 -
+2025-09-01 01:14:45 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+approve it
+ok
+yes
+2025-09-01 01:14:45 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 01:14:45 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 01:14:45 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 01:14:48 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:14:48 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:14:48 INFO 127.0.0.1 - - [01/Sep/2025 01:14:48] "POST / HTTP/1.1" 200 -
+2025-09-01 01:19:01 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+2025-09-01 01:19:01 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 01:19:01 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 01:19:01 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 01:19:04 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:19:04 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:19:04 INFO 127.0.0.1 - - [01/Sep/2025 01:19:04] "POST / HTTP/1.1" 200 -
+2025-09-01 01:19:10 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+2025-09-01 01:19:10 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 01:19:10 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 01:19:10 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 01:19:13 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:19:13 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:19:13 INFO 127.0.0.1 - - [01/Sep/2025 01:19:13] "POST / HTTP/1.1" 200 -
+2025-09-01 01:33:51 INFO  * Detected change in 'C:\\Users\\ganes\\Downloads\\agentic_rag_project6th\\app.py', reloading
+2025-09-01 01:33:51 INFO  * Restarting with stat
+2025-09-01 01:33:53 WARNING  * Debugger is active!
+2025-09-01 01:33:53 INFO  * Debugger PIN: 821-901-270
+2025-09-01 01:34:29 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-01 01:34:29 INFO [33mPress CTRL+C to quit[0m
+2025-09-01 01:34:29 INFO  * Restarting with stat
+2025-09-01 01:34:31 WARNING  * Debugger is active!
+2025-09-01 01:34:31 INFO  * Debugger PIN: 821-901-270
+2025-09-01 01:34:40 INFO 127.0.0.1 - - [01/Sep/2025 01:34:40] "GET / HTTP/1.1" 200 -
+2025-09-01 01:35:07 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+2025-09-01 01:35:07 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 01:35:07 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 01:35:07 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 01:35:12 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:35:12 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:35:12 INFO 127.0.0.1 - - [01/Sep/2025 01:35:12] "POST / HTTP/1.1" 200 -
+2025-09-01 01:35:27 INFO [QUERY] User asked: approve it
+2025-09-01 01:35:27 INFO [ACTION] Invoice INV-123 approved by user command
+2025-09-01 01:35:27 INFO 127.0.0.1 - - [01/Sep/2025 01:35:27] "POST / HTTP/1.1" 200 -
+2025-09-01 01:37:54 INFO  * Detected change in 'C:\\Users\\ganes\\Downloads\\agentic_rag_project6th\\app.py', reloading
+2025-09-01 01:37:55 INFO  * Restarting with stat
+2025-09-01 01:37:56 WARNING  * Debugger is active!
+2025-09-01 01:37:56 INFO  * Debugger PIN: 821-901-270
+2025-09-01 01:38:08 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-01 01:38:08 INFO [33mPress CTRL+C to quit[0m
+2025-09-01 01:38:08 INFO  * Restarting with stat
+2025-09-01 01:38:10 WARNING  * Debugger is active!
+2025-09-01 01:38:10 INFO  * Debugger PIN: 821-901-270
+2025-09-01 01:38:18 INFO [QUERY] User asked: approve it
+2025-09-01 01:38:18 INFO 127.0.0.1 - - [01/Sep/2025 01:38:18] "POST / HTTP/1.1" 200 -
+2025-09-01 01:38:31 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+2025-09-01 01:38:31 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 01:38:31 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 01:38:31 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 01:38:35 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 01:38:35 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 01:38:35 INFO 127.0.0.1 - - [01/Sep/2025 01:38:35] "POST / HTTP/1.1" 200 -
+2025-09-01 01:38:49 INFO [QUERY] User asked: approve it
+2025-09-01 01:38:49 INFO [ACTION] Invoice INV-123 approved by user command
+2025-09-01 01:38:49 INFO 127.0.0.1 - - [01/Sep/2025 01:38:49] "POST / HTTP/1.1" 200 -

@@ -1,0 +1,16 @@
+[
+  {
+    "invoice_id": "INV-123",
+    "amount": 5800,
+    "po_id": "PO-987",
+    "flagged": true,
+    "details": "Invoice amount exceeds PO amount"
+  },
+  {
+    "invoice_id": "INV-124",
+    "amount": 5000,
+    "po_id": "PO-988",
+    "flagged": false,
+    "details": "Invoice matches PO"
+  }
+]

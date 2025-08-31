@@ -1,0 +1,12 @@
+[
+  {
+    "po_id": "PO-987",
+    "amount": 5000,
+    "vendor": "Vendor A"
+  },
+  {
+    "po_id": "PO-988",
+    "amount": 5000,
+    "vendor": "Vendor B"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "receipt_id": "GR-111",
+    "invoice_id": "INV-123",
+    "po_id": "PO-987",
+    "received_amount": 4900
+  },
+  {
+    "receipt_id": "GR-115",
+    "invoice_id": "INV-124",
+    "po_id": "PO-988",
+    "received_amount": 5000
+  }
+]
