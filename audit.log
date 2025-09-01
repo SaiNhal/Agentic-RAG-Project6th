@@ -132,3 +132,90 @@ yes
 2025-09-01 01:38:49 INFO [QUERY] User asked: approve it
 2025-09-01 01:38:49 INFO [ACTION] Invoice INV-123 approved by user command
 2025-09-01 01:38:49 INFO 127.0.0.1 - - [01/Sep/2025 01:38:49] "POST / HTTP/1.1" 200 -
+2025-09-01 02:15:49 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-01 02:15:49 INFO [33mPress CTRL+C to quit[0m
+2025-09-01 02:15:49 INFO  * Restarting with stat
+2025-09-01 02:15:51 WARNING  * Debugger is active!
+2025-09-01 02:15:51 INFO  * Debugger PIN: 251-094-808
+2025-09-01 02:16:29 INFO 127.0.0.1 - - [01/Sep/2025 02:16:29] "GET / HTTP/1.1" 200 -
+2025-09-01 02:16:47 INFO [QUERY] User asked: Why was invoice INV-123 flagged
+2025-09-01 02:16:47 INFO [DECISION] Planner decided action: explain_flag
+2025-09-01 02:16:47 INFO [DATA] Retrieved invoice INV-123 and PO PO-987
+2025-09-01 02:16:47 INFO [VERIFICATION] Match score: 84.0, Confidence: Medium
+2025-09-01 02:16:59 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 02:16:59 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 02:16:59 INFO 127.0.0.1 - - [01/Sep/2025 02:16:59] "POST / HTTP/1.1" 200 -
+2025-09-01 02:17:16 INFO [QUERY] User asked: approve
+2025-09-01 02:17:16 INFO [ACTION] Invoice INV-123 approved by user command
+2025-09-01 02:17:16 INFO 127.0.0.1 - - [01/Sep/2025 02:17:16] "POST / HTTP/1.1" 200 -
+2025-09-01 02:19:29 INFO  * Detected change in 'C:\\Users\\ganes\\Downloads\\agentic_rag_project6th\\app.py', reloading
+2025-09-01 02:19:29 INFO  * Restarting with stat
+2025-09-01 02:19:31 WARNING  * Debugger is active!
+2025-09-01 02:19:31 INFO  * Debugger PIN: 251-094-808
+2025-09-01 02:19:56 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-01 02:19:56 INFO [33mPress CTRL+C to quit[0m
+2025-09-01 02:19:56 INFO  * Restarting with stat
+2025-09-01 02:19:58 WARNING  * Debugger is active!
+2025-09-01 02:19:58 INFO  * Debugger PIN: 251-094-808
+2025-09-01 02:20:03 INFO [QUERY] User asked: approve
+2025-09-01 02:20:03 INFO 127.0.0.1 - - [01/Sep/2025 02:20:03] "POST / HTTP/1.1" 200 -
+2025-09-01 02:20:27 INFO 127.0.0.1 - - [01/Sep/2025 02:20:27] "GET / HTTP/1.1" 200 -
+2025-09-01 02:20:32 INFO [QUERY] User asked: Why was invoice INV-123 flagged
+2025-09-01 02:20:38 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 02:20:38 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 02:20:38 INFO 127.0.0.1 - - [01/Sep/2025 02:20:38] "POST / HTTP/1.1" 200 -
+2025-09-01 02:24:27 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+2025-09-01 02:24:29 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 02:24:29 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 02:24:29 INFO 127.0.0.1 - - [01/Sep/2025 02:24:29] "POST / HTTP/1.1" 200 -
+2025-09-01 02:48:19 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+2025-09-01 02:48:21 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 02:48:21 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 02:48:21 INFO 127.0.0.1 - - [01/Sep/2025 02:48:21] "POST / HTTP/1.1" 200 -
+2025-09-01 03:06:09 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-01 03:06:09 INFO [33mPress CTRL+C to quit[0m
+2025-09-01 03:06:09 INFO  * Restarting with stat
+2025-09-01 03:06:14 WARNING  * Debugger is active!
+2025-09-01 03:06:14 INFO  * Debugger PIN: 251-094-808
+2025-09-01 03:06:33 INFO 127.0.0.1 - - [01/Sep/2025 03:06:33] "GET / HTTP/1.1" 200 -
+2025-09-01 03:06:34 INFO 127.0.0.1 - - [01/Sep/2025 03:06:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-01 03:06:47 INFO [QUERY] User asked: why th inv 123 ?
+2025-09-01 03:06:48 INFO 127.0.0.1 - - [01/Sep/2025 03:06:48] "POST / HTTP/1.1" 200 -
+2025-09-01 03:08:32 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-01 03:08:32 INFO [33mPress CTRL+C to quit[0m
+2025-09-01 03:08:32 INFO  * Restarting with stat
+2025-09-01 03:08:37 WARNING  * Debugger is active!
+2025-09-01 03:08:37 INFO  * Debugger PIN: 251-094-808
+2025-09-01 03:08:41 INFO 127.0.0.1 - - [01/Sep/2025 03:08:41] "GET / HTTP/1.1" 200 -
+2025-09-01 03:09:02 INFO [QUERY] User asked: why the inv-123 flagged?
+2025-09-01 03:09:02 INFO 127.0.0.1 - - [01/Sep/2025 03:09:02] "POST / HTTP/1.1" 200 -
+2025-09-01 03:09:36 INFO [QUERY] User asked: why the inv-123 flagged?
+2025-09-01 03:09:36 INFO 127.0.0.1 - - [01/Sep/2025 03:09:36] "POST / HTTP/1.1" 200 -
+2025-09-01 03:13:13 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-01 03:13:13 INFO [33mPress CTRL+C to quit[0m
+2025-09-01 03:13:13 INFO  * Restarting with stat
+2025-09-01 03:13:15 WARNING  * Debugger is active!
+2025-09-01 03:13:15 INFO  * Debugger PIN: 251-094-808
+2025-09-01 03:13:19 INFO 127.0.0.1 - - [01/Sep/2025 03:13:19] "GET / HTTP/1.1" 200 -
+2025-09-01 03:13:25 INFO [QUERY] User asked: Why was invoice INV-123 flagged?
+2025-09-01 03:13:35 INFO HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-01 03:13:35 INFO [EXPLANATION] Generated explanation provided to user
+2025-09-01 03:13:35 INFO 127.0.0.1 - - [01/Sep/2025 03:13:35] "POST / HTTP/1.1" 200 -
+2025-09-01 03:13:48 INFO [QUERY] User asked: Approve it
+2025-09-01 03:13:48 INFO [ACTION] Invoice INV-123 approved by user command
+2025-09-01 03:13:48 INFO 127.0.0.1 - - [01/Sep/2025 03:13:48] "POST / HTTP/1.1" 200 -
+2025-09-01 09:44:01 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-01 09:44:01 INFO [33mPress CTRL+C to quit[0m
+2025-09-01 09:44:01 INFO  * Restarting with stat
+2025-09-01 09:44:09 WARNING  * Debugger is active!
+2025-09-01 09:44:09 INFO  * Debugger PIN: 251-094-808
+2025-09-01 09:44:32 INFO 127.0.0.1 - - [01/Sep/2025 09:44:32] "GET / HTTP/1.1" 200 -
+2025-09-01 09:44:32 INFO 127.0.0.1 - - [01/Sep/2025 09:44:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-01 09:44:52 INFO [QUERY] User asked: why inv-123 is flagged?
+2025-09-01 09:44:52 INFO 127.0.0.1 - - [01/Sep/2025 09:44:52] "POST / HTTP/1.1" 200 -

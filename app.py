@@ -115,6 +115,23 @@ HTML_TEMPLATE = """
       margin-left: 10px;
       margin-top: 5px;
     }
+
+    /* Spinner styles */
+    .spinner {
+      display: none;
+      margin: 20px auto;
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #3498db;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
@@ -123,6 +140,9 @@ HTML_TEMPLATE = """
     <textarea name="query" rows="4" placeholder="Enter your query here...">{{ query }}</textarea><br><br>
     <input type="submit" value="Ask">
   </form>
+
+  <!-- Loading Spinner -->
+  <div id="loading-spinner" class="spinner"></div>
   
   {% if response %}
     <div class="response"><strong>Response:</strong><br>{{ response }}</div>
@@ -139,6 +159,15 @@ HTML_TEMPLATE = """
       {% endfor %}
     </div>
   {% endif %}
+
+  <script>
+    const form = document.querySelector('form');
+    const spinner = document.getElementById('loading-spinner');
+
+    form.addEventListener('submit', () => {
+      spinner.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
 """
@@ -149,44 +178,72 @@ def index():
     query = ""
     if request.method == "POST":
         query = request.form.get("query", "").strip()
-        if query:
-            log_event("QUERY", f"User asked: {query}")
+        print("Received query:", query)  # Debug
 
-            if query.lower() in {"approve it", "approve"}:
-                last_invoice = memory.retrieve("last_invoice")
-                if not last_invoice:
-                    response = "No previous invoice found to approve."
-                else:
-                    response = f"Approving the last queried invoice: {last_invoice}"
-                    log_event("ACTION", f"Invoice {last_invoice} approved by user command")
-            else:
-                plan = plan_query(query)
-                log_event("DECISION", f"Planner decided action: {plan['action']}")
+        if not query:
+            response = "Please enter a valid query."
+            print("No query received.")  # Debug
+        else:
+            try:
+                log_event("QUERY", f"User asked: {query}")
 
-                invoice_id = plan.get("invoice_id")
-                if not invoice_id:
-                    response = "Could not determine invoice from query."
-                else:
-                    invoice = retriever.get_invoice(invoice_id)
-                    if not invoice:
-                        response = f"Invoice {invoice_id} not found."
+                if query.lower() in {"approve it", "approve"}:
+                    last_invoice = memory.retrieve("last_invoice")
+                    print("Retrieved last invoice from memory:", last_invoice)  # Debug
+
+                    if not last_invoice:
+                        response = "No previous invoice found to approve."
+                        print("No last invoice in memory.")  # Debug
                     else:
-                        po = retriever.get_po(invoice.get("po_id")) if invoice.get("po_id") else None
-                        receipts = retriever.get_receipts_by_invoice(invoice_id)
-                        log_event("DATA", f"Retrieved invoice {invoice_id} and PO {invoice.get('po_id')}")
+                        response = f"Approving the last queried invoice: {last_invoice}"
+                        log_event("ACTION", f"Invoice {last_invoice} approved by user command")
+                        print("Approval processed.")  # Debug
 
-                        verification = verify_invoice_po(invoice, po) if po else {"match_score": 0, "confidence": "Low"}
-                        log_event("VERIFICATION", f"Match score: {verification['match_score']}, Confidence: {verification['confidence']}")
+                else:
+                    plan = plan_query(query)
+                    print("Planner output:", plan)  # Debug
 
-                        explanation = generate_explanation(invoice, po, receipts, verification, query)
-                        log_event("EXPLANATION", "Generated explanation provided to user")
+                    invoice_id = plan.get("invoice_id")
+                    print("Extracted invoice_id:", invoice_id)  # Debug
 
-                        memory.store("last_invoice", invoice_id)
-                        response = explanation
+                    if not invoice_id:
+                        response = "Could not determine invoice from query."
+                        print("No invoice_id found in plan.")  # Debug
+                    else:
+                        invoice = retriever.get_invoice(invoice_id)
+                        print("Retrieved invoice:", invoice)  # Debug
 
-            # Store in conversation history
-            if response and query:
-                conversation_history.append({"query": query, "response": response})
+                        if not invoice:
+                            response = f"Invoice {invoice_id} not found."
+                            print(f"Invoice {invoice_id} missing in retriever.")  # Debug
+                        else:
+                            po = retriever.get_po(invoice.get("po_id")) if invoice.get("po_id") else None
+                            print("Retrieved PO:", po)  # Debug
+
+                            receipts = retriever.get_receipts_by_invoice(invoice_id)
+                            print("Retrieved receipts:", receipts)  # Debug
+
+                            verification = verify_invoice_po(invoice, po) if po else {"match_score": 0, "confidence": "Low"}
+                            print("Verification result:", verification)  # Debug
+
+                            explanation = generate_explanation(invoice, po, receipts, verification, query)
+                            print("Generated explanation:", explanation)  # Debug
+
+                            log_event("EXPLANATION", "Generated explanation provided to user")
+
+                            memory.store("last_invoice", invoice_id)
+                            response = explanation
+
+                # Store interaction in conversation history
+                if response and query:
+                    conversation_history.append({"query": query, "response": response})
+                    print("Added to conversation history.")  # Debug
+
+            except Exception as e:
+                error_msg = f"Sorry, an error occurred: {str(e)}"
+                log_event("ERROR", error_msg)
+                response = error_msg
+                print("Exception caught:", str(e))  # Debug
 
     return render_template_string(HTML_TEMPLATE, query=query, response=response, history=conversation_history)
 
